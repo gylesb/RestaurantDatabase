@@ -1,0 +1,26 @@
+<h1>Restaurant list for @Model["cuisine"].GetName()</h1>
+<body>
+  @if (@Model["restaurants"].Count == 0)
+  {
+    <h3>No restaurants have been added yet!</h3>
+  }
+  <table>
+    <tr>
+      <th>Id</th>
+      <th>Restaurant</th>
+      <th>Type</th>
+    </tr>
+    @foreach (var restaurant in @Model["restaurants"])
+    {
+      <h4>@restaurant.GetId() | <a href="/restaurants/@restaurant.GetId()/edit">Edit</a></h4>
+      <tr>
+      <td>@restaurant.GetId()</td>
+      <td>@restaurant.GetName()</td>
+      <td>@restaurant.GetType()</td>
+      </tr>
+    }
+  </table>
+<br>
+  <a href="/@Model["cuisine"].GetName()/@Model["cuisine"].GetId()/restaurant/add">Add Restaurant</a>
+  <a href="/">Homepage</a>
+</body>

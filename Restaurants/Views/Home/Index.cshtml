@@ -1,0 +1,31 @@
+<h1>Best Restaurants</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3>No restaurants have been added yet!</h3>
+}
+
+<table>
+<tr>
+  <th><strong>Id</strong></th>
+  <th><strong>Name</strong></th>
+  <th><strong>Type</strong></th>
+  <th><strong>Cuisine</strong></th>
+  <th><strong>Price</strong></th>
+</tr>
+
+@foreach (var restaurant in  Model)
+{
+  <tr>
+    <th>@restaurant.GetId()</th>
+    <th>@restaurant.GetName()</th>
+    <th>@restaurant.GetType()</th>
+    <th>@restaurant.GetCuisineId()</th>
+    <th>@restaurant.GetPrice()</th>
+
+  </tr>
+}
+</table>
+
+<a href="/cuisine/add">Add Cuisine</a> <br>
+<a href="/cuisine/list">View Cuisines</a>

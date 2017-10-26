@@ -9,10 +9,10 @@ namespace BestRestaurants.Models
     private int _id;
     private string _name;
     private int _cuisineId;
-    private int _price;
+    private string _price;
     private string _type;
 
-    public Restaurant(string name, string type, int cuisineId, int price, int Id = 0)
+    public Restaurant(string name, string type, int cuisineId, string price, int Id = 0)
     {
       _id = Id;
       _cuisineId = cuisineId;
@@ -55,7 +55,7 @@ namespace BestRestaurants.Models
       return _id;
     }
 
-    public int GetPrice()
+    public string GetPrice()
     {
       return _price;
     }
@@ -121,7 +121,7 @@ namespace BestRestaurants.Models
         string restaurantName = rdr.GetString(1);
         string restaurantType = rdr.GetString(2);
         int restaurantCuisineId = rdr.GetInt32(3);
-        int restaurantPrice = rdr.GetInt32(4);
+        string restaurantPrice = rdr.GetString(4);
 
         Restaurant newRestaurant = new Restaurant(restaurantName, restaurantType, restaurantCuisineId, restaurantPrice, restaurantId);
         allRestaurants.Add(newRestaurant);
@@ -168,7 +168,7 @@ namespace BestRestaurants.Models
       string restaurantName = "";
       int restaurantCuisineId = 0;
       string restaurantType = "";
-      int restaurantPrice = 0;
+      string restaurantPrice = "";
 
       while (rdr.Read())
       {
@@ -176,7 +176,7 @@ namespace BestRestaurants.Models
         restaurantName = rdr.GetString(1);
         restaurantType = rdr.GetString(2);
         restaurantCuisineId = rdr.GetInt32(3);
-        restaurantPrice = rdr.GetInt32(4);
+        restaurantPrice = rdr.GetString(4);
       }
 
       Restaurant newRestaurant = new Restaurant(restaurantName, restaurantType, restaurantCuisineId, restaurantPrice, restaurantId);

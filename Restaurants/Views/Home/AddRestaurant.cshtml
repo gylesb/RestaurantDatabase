@@ -1,0 +1,21 @@
+<h1>Add a Restaurant for @Model.GetName()</h1>
+
+<form action="/@Model.GetName()/@Model.GetId()/restaurantlist" method="post">
+  <label for="restaurant-name">Insert restaurant Name: </label>
+  <input type="text" name="restaurant-name" class="form-control">
+  <br>
+  <label for="restaurant-type">What kind of food does the restaurant have? (i.e. Chinese, Italian, Japanese, etc.): </label>
+  <input type="text" name="restaurant-type" class="form-control">
+  <br>
+  <label for="restaurant-price">What is the price of the food?</label>
+  <select class="form-control" name="restaurant-price">
+    <option value="1">Cheap (~$10 per entree)</option>
+    <option value="2">Moderate ($11 - $20 per entree)</option>
+    <option value="3">Expensive ($21+ per entree)</option>
+  </select>
+  <br>
+  <button type="submit" name="btnSubmit" class="btn btn-info">Submit</button>
+</form>
+
+<a href="/@Model.GetName()/@Model.GetId()/restaurantlist">View Restaurant List</a><br>
+<a href="/">Homepage</a>
