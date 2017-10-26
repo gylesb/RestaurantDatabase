@@ -18,7 +18,7 @@
 {
   <tr>
     <th>@restaurant.GetId()</th>
-    <th>@restaurant.GetName()</th>
+    <th><a href="/restaurant/@restaurant.GetName()/@restaurant.GetId()/review">@restaurant.GetName()</a></th>
     <th>@restaurant.GetType()</th>
     <th>
     @foreach (var cuisine in @Model["cuisine"])

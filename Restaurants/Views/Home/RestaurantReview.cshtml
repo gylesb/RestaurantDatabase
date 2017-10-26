@@ -1,0 +1,11 @@
+<h1>Reviews for @Model["restaurant"].GetName()</h1>
+
+<ul>
+  @foreach (var review in Model["review"])
+  {
+    <li>@review.GetId() | @review.GetDescription() | @review.GetReviewerName() <a href="/@Model["restaurant"].GetId()/review/@review.GetId()/edit">Edit</a> | <a href="/@Model["restaurant"].GetId()/review/@review.GetId()/delete">Delete</a></li>
+  }
+</ul>
+
+<a href="/restaurants/@Model["restaurant"].GetId()/review/add">Add Review</a>
+<a href="/">Home Page</a>

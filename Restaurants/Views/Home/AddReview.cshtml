@@ -1,0 +1,12 @@
+<h1>Add Review for @Model.GetName()</h1>
+
+<form action="/restaurant/@Model.GetName()/@Model.GetId()/review" method="post">
+  <label for="review-description">Review</label>
+  <input type="text" name="review-description" class="form-control">
+  <label for="reviewer">Reviewed By:</label>
+  <input type="text" name="reviewer">
+  <button type="submit" name="button">Add Review</button>
+</form>
+
+<a href="/restaurant/@Model.GetName()/@Model.GetId()/review">View Reviews</a><br>
+<a href="/">HomePage</a>
