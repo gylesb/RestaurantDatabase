@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>No.</th>
-    <th>Cuisine Name</th>
+    <th>Cuisine</th>
 
   @if (@Model.Count == 0)
   {
@@ -13,7 +13,7 @@
   {
     <tr>
     <th>@cuisine.GetId()</th>
-    <th><a href = '/@cuisine.GetName()/@cuisine.GetId()/restaurantlist'>@cuisine.GetName()</a></th>
+    <th><a href = '/@cuisine.GetName()/@cuisine.GetId()/restaurantlist'>@cuisine.GetName()</a> | <a href="/@cuisine.GetName()/@cuisine.GetId()/cuisine/delete">Delete</a></th>
     </tr>
   }
 </table>

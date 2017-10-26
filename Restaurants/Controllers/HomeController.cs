@@ -102,5 +102,25 @@ namespace RestaurantApp.Controllers
 
       return RedirectToAction("Index");
     }
+
+    [HttpGet("/{name}/{id}/restaurant/delete")]
+    public ActionResult RestaurantDelete(int id)
+    {
+      // Cuisine is selected as an object
+      Restaurant thisRestaurant = Restaurant.Find(id);
+      thisRestaurant.DeleteRestaurant();
+
+      return RedirectToAction("Index");
+    }
+
+    [HttpGet("/{name}/{id}/cuisine/delete")]
+    public ActionResult CuisineDelete(int id)
+    {
+      // Cuisine is selected as an object
+      Cuisine thisCuisine = Cuisine.Find(id);
+      thisCuisine.DeleteCuisine();
+
+      return RedirectToAction("Index");
+    }
   }
 }
