@@ -10,9 +10,13 @@ namespace RestaurantApp.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      List<Cuisine> cuisineList = Cuisine.GetAll();
       List<Restaurant> cuisineRestaurants = Restaurant.GetAll();
+      model.Add("cuisine", cuisineList);
+      model.Add("restaurant", cuisineRestaurants);
 
-      return View(cuisineRestaurants);
+      return View("Index", model);
     }
 
     [HttpGet("/cuisine/add")]
@@ -69,7 +73,7 @@ namespace RestaurantApp.Controllers
     [HttpPost("/{name}/{id}/restaurantlist")]
     public ActionResult AddRestaurantViewRestaurantList(int id)
     {
-      Restaurant newRestaurant = new Restaurant(Request.Form["restaurant-name"], Request.Form["restaurant-type"], id, Request.Form["restaurant-price"]);
+      Restaurant newRestaurant = new Restaurant(Request.Form["restaurant-name"], Request.Form["restaurant-type"], id, int.Parse(Request.Form["restaurant-price"]));
       newRestaurant.Save();
       Dictionary<string, object> model = new Dictionary<string, object>();
       // Cuisine is selected as an object

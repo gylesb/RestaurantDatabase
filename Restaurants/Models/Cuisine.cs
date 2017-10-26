@@ -63,7 +63,7 @@ namespace BestRestaurants.Models
         string restaurantName = rdr.GetString(1);
         string restaurantType = rdr.GetString(2);
         int restaurantCuisineId = rdr.GetInt32(3);
-        string restaurantPrice = rdr.GetString(4);
+        int restaurantPrice = rdr.GetInt32(4);
         Restaurant newRestaurant = new Restaurant(restaurantName, restaurantType, restaurantCuisineId, restaurantPrice, restaurantId);
         allCuisineRestaurants.Add(newRestaurant);
       }
